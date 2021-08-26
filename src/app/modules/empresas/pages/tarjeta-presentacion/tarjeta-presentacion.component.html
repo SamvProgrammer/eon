@@ -1,0 +1,11 @@
+<div class="card" style="width: 18rem;">
+  <img class="card-img-top tamanio" src="assets/imgs/perfil.png" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">Nombre: {{persona.nombre}}</h5>
+      <h5 class="card-title">Edad: {{persona.edad}}</h5>
+      <h6 class="card-subtitle mb-2 text-muted">Domicilio: {{persona.direccion.calle}} {{persona.direccion.colonia}} {{persona.direccion.pais}}</h6>
+      <p class="card-text">{{persona.frase}}</p>
+      <button  (click)="eliminar()" class="btn btn-danger mr-2">Eliminar</button>
+      <button  (click)="editar()" class="btn btn-primary">Editar</button>
+    </div>
+  </div>

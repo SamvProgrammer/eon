@@ -1,0 +1,68 @@
+<form [formGroup]="myform" (ngSubmit)="enviarFormulario()">
+    <div class="row">
+        <div class="form-group col-4">
+            <label for="nombre">Nombre</label>
+            <input #focoelemento formControlName="nombre" [class.is-invalid]="f.nombre.errors && f.nombre.touched"  type="text" id="nombre" class="form-control">
+            <div *ngIf="f.nombre.errors?.required && f.nombre.touched" class="invalid-feedback">Campo obligatorio</div>
+            <div *ngIf="f.nombre.errors?.minlength && f.nombre.touched" class="invalid-feedback">Debe contener mínimo 8 caracteres</div>
+          </div>
+          <div class="form-group  col-4">
+            <label for="edad">Edad</label>
+            <input  formControlName="edad" [class.is-invalid]="f.edad.errors && f.edad.touched" type="number" id="edad" class="form-control"  >
+            <div class="invalid-feedback">Campo obligatorio</div>
+          </div>
+         <hr>
+         
+     
+           
+          
+         
+    </div>
+    <div class="row" formGroupName="direccion">
+        <div class="form-group  col-4">
+          <label for="id">Id direccion</label>
+          <input [class.is-invalid]="fgroup.id.errors && fgroup.id.touched" formControlName="id"  type="text" id="id" class="form-control" >
+          <div *ngIf="fgroup.id.errors?.required && fgroup.id.touched" class="invalid-feedback">Campo obligatorio</div>
+          <div *ngIf="fgroup.id.errors?.pattern && fgroup.id.touched" class="invalid-feedback">Debe ser númerico el Id dirección</div>
+        </div>
+        <div class="form-group  col-4">
+          <label for="calle">Calle</label>
+          <input [class.is-invalid]="fgroup.calle.errors && fgroup.calle.touched" formControlName="calle"  type="text" id="calle" class="form-control" >
+          <div *ngIf="fgroup.calle.errors?.required && fgroup.calle.touched" class="invalid-feedback">Campo obligatorio</div>
+          <div *ngIf="fgroup.calle.errors?.minlength && fgroup.calle.touched" class="invalid-feedback">Debe contener mínimo 8 caracteres</div>
+        </div>
+        <div class="form-group  col-4">
+          <label for="colonia">Colonia</label>
+          <input [class.is-invalid]="fgroup.colonia.errors && fgroup.colonia.touched" formControlName="colonia"  type="text" id="colonia" class="form-control" >
+          <div *ngIf="fgroup.colonia?.errors?.required && fgroup.colonia.touched" class="invalid-feedback">Campo obligatorio</div>
+          <div *ngIf="fgroup.colonia?.errors?.minlength && fgroup.colonia.touched" class="invalid-feedback">Debe contener mínimo 8 caracteres</div>
+        </div>
+        <div class="form-group  col-4">
+          <label for="pais">País</label>
+          <select [class.is-invalid]="fgroup.pais?.errors && fgroup.pais.touched" formControlName="pais" name="" id="pais" class="form-control">
+            <option value="">Seleccionar</option>
+            <option value="México">México</option>
+          </select>
+          <div class="invalid-feedback">Campo obligatorio</div>
+        </div>
+
+      
+
+    </div>
+    <div class="row">
+      <div class="form-group  col-12">
+        <label for="frase">Frase</label>
+        <input  formControlName="frase" [class.is-invalid]="f.frase.errors && f.frase.touched" type="text" id="frase" class="form-control" >
+        <div *ngIf="f.frase?.errors?.required && f.frase.touched" class="invalid-feedback">Campo obligatorio</div>
+        <div *ngIf="f.frase?.errors?.minlength && f.frase.touched" class="invalid-feedback">Debe contener mínimo 8 caracteres</div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col text-right">
+        <button type="submit" class="btn btn-success">Guardar cambios</button>
+      </div>
+    </div>
+  </form>
+
+
+  
